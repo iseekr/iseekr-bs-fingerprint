@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>fingerprintjs</title>
-  <style type="text/css">
-    body{
-      font-family: 'Sans'
-    }
-  </style>
-  <script src="fingerprint.js"></script>
-</head>
-<body>
-  <div style="text-align: center;">
+# Demo
+
+----
+
+````html
+ <div style="text-align: center;">
     <h3 style="margin-top: 60px">Your browser fingerprint with default settings (canvas, screen resolutin, activeX disabled)</h3>
     <h1 id="fp1"></h1>
   </div>
@@ -27,6 +20,7 @@
     <h1 id="fp4"></h1>
   </div>
   <script>
+  seajs.use('fingerprint',function(Fingerprint){
     var fp1 = new Fingerprint();
     var fp2 = new Fingerprint({canvas: true});
     var fp3 = new Fingerprint({ie_activex: true});
@@ -35,6 +29,6 @@
     document.getElementById('fp2').innerHTML = fp2.get();
     document.getElementById('fp3').innerHTML = fp3.get();
     document.getElementById('fp4').innerHTML = fp4.get();
+  });
   </script>
-</body>
-</html>
+````
